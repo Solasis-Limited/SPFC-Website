@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support & Data Deletion | Sex Positions for Couples</title>
+    <meta
+      name="description"
+      content="Contact Solasis Limited for Sex Positions for Couples support requests and account deletion requests."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo-mark.svg" />
+    <link rel="apple-touch-icon" href="../assets/logo-mark.svg" />
+    <link rel="stylesheet" href="../assets/site.css" />
+    <script src="../assets/site-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../assets/request-form.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a
+          class="brand-mark"
+          href="../"
+          aria-label="Sex Positions for Couples home"
+        >
+          <img
+            src="../assets/logo-mark.svg"
+            alt="Sex Positions for Couples logo"
+            width="54"
+            height="54"
+          />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="../">Home</a>
+          <a href="../privacy-policy/">Privacy Policy</a>
+        </nav>
+      </header>
+
+      <main class="request-layout">
+        <section class="hero-panel hero-panel-compact">
+          <div class="hero-copy">
+            <p class="eyebrow">Contact Solasis Limited</p>
+            <h1>Support and account deletion requests</h1>
+            <p class="hero-text">
+              Use this form for support questions, privacy-related requests, or
+              permanent account deletion requests.
+            </p>
+            <p class="microcopy">
+              Requests are sent to
+              <a href="mailto:support@spfc.solasislimited.org"
+                >support@spfc.solasislimited.org</a
+              >.
+            </p>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <div class="notice" data-emailjs-status>
+            Configure EmailJS in <code>site/assets/site-config.js</code> before
+            going live.
+          </div>
+
+          <form class="request-form" id="support-request-form">
+            <label>
+              Request type
+              <select id="request-type" name="request_type" required>
+                <option value="support">Support request</option>
+                <option value="deletion">Account deletion request</option>
+                <option value="privacy">Privacy question</option>
+              </select>
+            </label>
+
+            <label>
+              Your name
+              <input
+                type="text"
+                name="from_name"
+                autocomplete="name"
+                required
+              />
+            </label>
+
+            <label>
+              Your email
+              <input
+                type="email"
+                name="reply_to"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label>
+              App account email
+              <input
+                type="email"
+                name="account_email"
+                autocomplete="email"
+                placeholder="If different from the email above"
+              />
+            </label>
+
+            <label>
+              Subject
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="How can we help?"
+                required
+              />
+            </label>
+
+            <label class="full-span">
+              Details
+              <textarea
+                name="message"
+                id="message"
+                rows="8"
+                placeholder="Share the details of your request"
+                required
+              ></textarea>
+            </label>
+
+            <label class="checkbox-row full-span">
+              <input type="checkbox" name="confirm_request" required />
+              <span
+                >I confirm this request relates to my account or a genuine
+                support issue.</span
+              >
+            </label>
+
+            <input
+              type="hidden"
+              name="to_email"
+              value="support@spfc.solasislimited.org"
+            />
+            <input
+              type="hidden"
+              name="app_name"
+              value="Sex Positions for Couples"
+            />
+
+            <div class="form-actions full-span">
+              <button class="button button-primary" type="submit">
+                Send request
+              </button>
+              <p class="form-status" id="form-status" aria-live="polite"></p>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
