@@ -37,16 +37,18 @@
   const templates = {
     support: {
       subject: "SPFC support request",
-      message: "Please describe the issue you need help with."
+      message:
+        "Please describe the issue you need help with. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
     },
     deletion: {
       subject: "SPFC account deletion request",
       message:
-        "Please confirm the account you want deleted and include any details that will help us identify it."
+        "Please confirm the account you want deleted and include details that will help us identify it. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
     },
     privacy: {
       subject: "SPFC privacy question",
-      message: "Please describe your privacy-related question or request."
+      message:
+        "Please describe your privacy-related question or request. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
     }
   };
 
