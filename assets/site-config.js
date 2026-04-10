@@ -1,5 +1,5 @@
 window.SPFC_SITE_CONFIG = {
-  googlePlayUrl: "",
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=org.solasislimited.spfc",
   appleAppStoreUrl: "",
   emailjs: {
     publicKey: "53N2L9zFcw358p37D",
