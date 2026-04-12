@@ -30,7 +30,7 @@
       publicKey: config.emailjs.publicKey
     });
     noticeField.textContent =
-      "Requests will be delivered by email to support@spfc.solasislimited.org.";
+      "Requests will be delivered by email to the support team. We aim to reply within 3-5 business days.";
     noticeField.classList.add("notice-success");
   }
 
