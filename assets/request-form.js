@@ -80,6 +80,21 @@
     try {
       const formData = new FormData(form);
       const templateParams = Object.fromEntries(formData.entries());
+      const requestType = templates[typeField.value] || templates.support;
+
+      templateParams.request_type_label = typeField.options[typeField.selectedIndex]
+        ? typeField.options[typeField.selectedIndex].text
+        : requestType.subject;
+      templateParams.account_email_or_reply_to =
+        templateParams.account_email || templateParams.reply_to;
+      templateParams.confirm_request_text = templateParams.confirm_request
+        ? "Yes"
+        : "No";
+      templateParams.submitted_at = new Date().toLocaleString("en-GB", {
+        dateStyle: "long",
+        timeStyle: "short"
+      });
+      templateParams.page_url = window.location.href;
 
       await window.emailjs.send(
         config.emailjs.serviceId,
