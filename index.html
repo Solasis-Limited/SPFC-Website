@@ -47,8 +47,8 @@
             <p class="eyebrow">Solasis Limited</p>
             <h1>Official support site for Sex Positions for Couples.</h1>
             <p class="hero-text">
-              View Google Play and App Store links, privacy information, make support
-              and account deletion requests.
+              View Google Play links, download the full Android APK, access
+              privacy information, and make support or account deletion requests.
             </p>
             <div class="button-row">
               <a
@@ -62,12 +62,11 @@
               </a>
               <a
                 class="button button-secondary"
-                data-store-link="appleAppStore"
-                href="#"
-                target="_blank"
-                rel="noreferrer"
+                data-store-link="androidFullApk"
+                data-apk-download
+                href="#android-download"
               >
-                Apple App Store
+                Download Full Android APK
               </a>
             </div>
             <p class="microcopy">
@@ -78,30 +77,74 @@
             </p>
           </div>
 
-          <aside class="hero-card">
-            <div class="stat-card">
-              <span class="stat-label">Need help?</span>
-              <strong>Send a support request</strong>
-              <p>
-                Ask a question, report a problem, or request account deletion
-                from one form.
-              </p>
-              <a class="text-link" href="./request/">Open request form</a>
-            </div>
-            <div class="stat-card">
-              <span class="stat-label">Privacy</span>
-              <strong>Privacy policy is live here</strong>
-              <p>
-                View our privacy policy, which is designed to meet Google Play and App Store requirements.
-              </p>
-              <a class="text-link" href="./privacy-policy/"
-                >View privacy policy</a
-              >
-            </div>
-          </aside>
+          <div class="hero-media">
+            <img
+              src="./assets/ballet-dancer.jpg"
+              alt="Illustration preview for Sex Positions for Couples"
+            />
+          </div>
         </section>
 
-        <section class="content-grid">
+        <section class="support-grid">
+          <article class="stat-card">
+            <span class="stat-label">Need help?</span>
+            <strong>Send a support request</strong>
+            <p>
+              Ask a question, report a problem, or request account deletion
+              from one form.
+            </p>
+            <a class="text-link" href="./request/">Open request form</a>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Privacy</span>
+            <strong>Privacy policy is live here</strong>
+            <p>
+              View our privacy policy and support information in one place.
+            </p>
+            <a class="text-link" href="./privacy-policy/"
+              >View privacy policy</a
+            >
+          </article>
+        </section>
+
+        <section class="content-card download-card" id="android-download">
+          <div class="download-card-copy">
+            <p class="section-kicker">For Android users</p>
+            <h2>Install the full version with images</h2>
+            <p>
+              Download the APK directly to install the full Android version of
+              Sex Positions for Couples, including images.
+            </p>
+            <div class="button-row">
+              <a
+                class="button button-primary"
+                data-store-link="androidFullApk"
+                data-apk-download
+                href="#"
+              >
+                Download APK
+              </a>
+            </div>
+            <p class="microcopy">
+              Important: if you already installed the text-only Google Play
+              version, uninstall it first. Android cannot keep both installed
+              because they use the same package name.
+            </p>
+          </div>
+
+          <div class="install-steps">
+            <p class="section-kicker">Installation steps</p>
+            <ol class="steps-list">
+              <li>If you already have the text-only Google Play version installed, uninstall it first.</li>
+              <li>Tap the APK download button on this page and wait for the file to finish downloading.</li>
+              <li>Open the downloaded APK from your browser or Downloads app.</li>
+              <li>If Android blocks the install, allow app installs from your browser or file manager when prompted.</li>
+              <li>Continue the installation and then open the app normally.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="content-grid content-grid-single">
           <article class="content-card">
             <p class="section-kicker">For users</p>
             <h2>Quick links</h2>
@@ -111,19 +154,11 @@
             <div class="link-list">
               <a href="./privacy-policy/">Privacy Policy</a>
               <a href="./request/">Support and account deletion</a>
+              <a href="#android-download">Android full APK download</a>
               <a href="mailto:support@sexpositionsforcouples.solasislimited.org"
                 >Email support directly</a
               >
             </div>
-          </article>
-
-          <article class="content-card accent-card">
-            <p class="section-kicker">For store review</p>
-            <h2>Application Review</h2>
-            <p>
-              This site is designed to give Google Play and App Store reviewers
-              a stable public URL for legal and support requirements.
-            </p>
           </article>
         </section>
       </main>

@@ -2,7 +2,7 @@
   const config = window.SPFC_SITE_CONFIG || {};
   const linkMap = {
     googlePlay: config.googlePlayUrl,
-    appleAppStore: config.appleAppStoreUrl
+    androidFullApk: config.androidFullApkUrl
   };
 
   document.querySelectorAll("[data-store-link]").forEach((link) => {
@@ -18,4 +18,11 @@
     link.setAttribute("aria-disabled", "true");
     link.setAttribute("title", "Set this URL in site/assets/site-config.js");
   });
+
+  const apkDownloadFilename = config.androidFullApkFilename;
+  if (apkDownloadFilename) {
+    document.querySelectorAll("[data-apk-download]").forEach((link) => {
+      link.setAttribute("download", apkDownloadFilename);
+    });
+  }
 })();

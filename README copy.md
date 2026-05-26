@@ -14,7 +14,8 @@ This folder contains the static GitHub Pages site for `spfc.solasislimited.org`.
 2. Point the DNS for `spfc.solasislimited.org` to GitHub Pages.
 3. Fill in the values in `site/assets/site-config.js`:
    - `googlePlayUrl`
-   - `appleAppStoreUrl`
+   - `androidFullApkUrl`
+   - `androidFullApkFilename`
    - `emailjs.publicKey`
    - `emailjs.serviceId`
    - `emailjs.templateId`
