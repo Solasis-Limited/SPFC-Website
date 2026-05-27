@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../assets/site.css" />
     <script src="../assets/site-config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../assets/site.js" defer></script>
     <script src="../assets/request-form.js" defer></script>
   </head>
   <body>
@@ -56,15 +57,27 @@
 
         <section class="content-card">
           <p class="section-kicker">Looking for the full version?</p>
-          <h2>Install the Android version with images</h2>
+          <h2>Open the web app with images</h2>
           <p>
-            The full Android version with images is available as a direct APK
-            download from our homepage, together with installation
-            instructions.
+            The easiest way to use the full version with images is through the
+            web app. It works on iPhone and Android, and you can add it to your
+            home screen like a regular app.
           </p>
           <div class="button-row">
-            <a class="button button-primary" href="../#android-download">
-              Find the full Android version
+            <a
+              class="button button-primary"
+              data-store-link="pwa"
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open Web App
+            </a>
+            <a class="button button-secondary" href="../#install-web-app">
+              Install instructions
+            </a>
+            <a class="button button-secondary" href="../#android-download">
+              Direct Android Download
             </a>
           </div>
         </section>
