@@ -6,7 +6,7 @@
     <title>Sex Positions for Couples | Solasis Limited</title>
     <meta
       name="description"
-      content="Official support site for Sex Positions for Couples with store links, privacy policy, and support or account deletion requests."
+      content="Install Sex Positions for Couples as a web app on iPhone or Android, with Android APK and Google Play fallbacks plus privacy and support links."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +36,9 @@
           />
         </a>
         <nav class="site-nav" aria-label="Primary">
+          <a data-store-link="pwa" href="#" target="_blank" rel="noreferrer"
+            >Open Web App</a
+          >
           <a href="./privacy-policy/">Privacy Policy</a>
           <a href="./request/">Support & Data Deletion</a>
         </nav>
@@ -45,28 +48,24 @@
         <section class="hero-panel">
           <div class="hero-copy">
             <p class="eyebrow">Solasis Limited</p>
-            <h1>Official support site for Sex Positions for Couples.</h1>
+            <h1>Sex Positions for Couples, easiest as a web app.</h1>
             <p class="hero-text">
-              View Google Play links, download the full Android APK, access
-              privacy information, and make support or account deletion requests.
+              Open the full app in your browser and add it to your home screen
+              on iPhone or Android. No app store download, no external APK
+              warning, and the image version is available on both platforms.
             </p>
             <div class="button-row">
               <a
                 class="button button-primary"
-                data-store-link="googlePlay"
+                data-store-link="pwa"
                 href="#"
                 target="_blank"
                 rel="noreferrer"
               >
-                Google Play
+                Open Web App
               </a>
-              <a
-                class="button button-secondary"
-                data-store-link="androidFullApk"
-                data-apk-download
-                href="#android-download"
-              >
-                Download Full Android APK
+              <a class="button button-secondary" href="#install-web-app">
+                How to Install
               </a>
             </div>
             <p class="microcopy">
@@ -82,6 +81,53 @@
               src="./assets/ballet-dancer.jpg"
               alt="Illustration preview for Sex Positions for Couples"
             />
+          </div>
+        </section>
+
+        <section class="install-panel content-card" id="install-web-app">
+          <div class="install-intro">
+            <p class="section-kicker">Recommended</p>
+            <h2>Install the web app on your home screen</h2>
+            <p>
+              The web app is the simplest way to use the full version with
+              images. It works on iOS and Android through the browser, then
+              launches like an app from your home screen.
+            </p>
+            <div class="button-row">
+              <a
+                class="button button-primary"
+                data-store-link="pwa"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Web App
+              </a>
+            </div>
+          </div>
+
+          <div class="platform-steps">
+            <article class="step-card">
+              <p class="section-kicker">iPhone or iPad</p>
+              <h3>Install with Safari</h3>
+              <ol class="steps-list">
+                <li>Open the web app in Safari.</li>
+                <li>Tap the Share button in the browser toolbar.</li>
+                <li>Choose Add to Home Screen.</li>
+                <li>Tap Add, then open it from your home screen.</li>
+              </ol>
+            </article>
+
+            <article class="step-card">
+              <p class="section-kicker">Android</p>
+              <h3>Install with Chrome</h3>
+              <ol class="steps-list">
+                <li>Open the web app in Chrome.</li>
+                <li>Tap the menu button in the browser toolbar.</li>
+                <li>Choose Install app or Add to Home screen.</li>
+                <li>Confirm the install, then launch it from your home screen.</li>
+              </ol>
+            </article>
           </div>
         </section>
 
@@ -109,11 +155,13 @@
 
         <section class="content-card download-card" id="android-download">
           <div class="download-card-copy">
-            <p class="section-kicker">For Android users</p>
-            <h2>Install the full version with images</h2>
+            <p class="section-kicker">Android fallback</p>
+            <h2>Prefer native Android installation?</h2>
             <p>
-              Download the APK directly to install the full Android version of
-              Sex Positions for Couples, including images.
+              The web app is the recommended route. If you still prefer a
+              native Android install, you can download the full APK directly
+              from this site. Android may warn that the file comes from outside
+              Google Play.
             </p>
             <div class="button-row">
               <a
@@ -144,6 +192,27 @@
           </div>
         </section>
 
+        <section class="content-card store-card">
+          <div>
+            <p class="section-kicker">Google Play fallback</p>
+            <h2>Text-only version on Google Play</h2>
+            <p>
+              Google Play does not allow the image version, so the store listing
+              is text-only. It remains available for users who prefer installing
+              only through Google Play.
+            </p>
+          </div>
+          <a
+            class="button button-secondary"
+            data-store-link="googlePlay"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Google Play
+          </a>
+        </section>
+
         <section class="content-grid content-grid-single">
           <article class="content-card">
             <p class="section-kicker">For users</p>
@@ -152,9 +221,16 @@
               Legal docs and everything you need for support and account deletion are available here.
             </p>
             <div class="link-list">
+              <a data-store-link="pwa" href="#" target="_blank" rel="noreferrer"
+                >Open the web app</a
+              >
               <a href="./privacy-policy/">Privacy Policy</a>
               <a href="./request/">Support and account deletion</a>
-              <a href="#android-download">Android full APK download</a>
+              <a href="#install-web-app">Web app install instructions</a>
+              <a href="#android-download">Native Android APK fallback</a>
+              <a data-store-link="googlePlay" href="#" target="_blank" rel="noreferrer"
+                >Text-only Google Play version</a
+              >
               <a href="mailto:support@sexpositionsforcouples.solasislimited.org"
                 >Email support directly</a
               >
