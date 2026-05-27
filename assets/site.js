@@ -1,6 +1,7 @@
 (function () {
   const config = window.SPFC_SITE_CONFIG || {};
   const linkMap = {
+    pwa: config.pwaUrl,
     googlePlay: config.googlePlayUrl,
     androidFullApk: config.androidFullApkUrl
   };
