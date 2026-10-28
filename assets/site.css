@@ -387,6 +387,7 @@ a {
 .policy-layout,
 .request-layout {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
 }
 
@@ -401,6 +402,10 @@ a {
 
 .legal-card p + p {
   margin-top: 12px;
+}
+
+.legal-card a {
+  overflow-wrap: anywhere;
 }
 
 .legal-card ul {
