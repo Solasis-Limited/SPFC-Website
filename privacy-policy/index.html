@@ -47,37 +47,65 @@
             <h1>Privacy Policy</h1>
             <p class="hero-text">
               Sex Positions for Couples is operated by Solasis Limited. This
-              Privacy Policy explains what information the app collects, how it
-              uses that information, and the choices available to users.
+              Privacy Policy explains what information the app and related
+              services collect, how it is used, and the choices available to you.
             </p>
-            <p class="microcopy">Last updated: 28 March 2026</p>
+            <p class="microcopy">Last updated: 30 October 2026</p>
           </div>
         </section>
 
         <section class="legal-card">
           <h2>Scope</h2>
           <p>
-            This policy applies to the mobile app, backend services, and related
-            support flows used by Sex Positions for Couples.
+            This policy applies to the Sex Positions for Couples mobile app and
+            web app, related backend services, and support and account-deletion
+            requests submitted through our website.
           </p>
         </section>
 
         <section class="legal-card">
           <h2>Information We Collect</h2>
           <ul>
-            <li>Account and authentication information.</li>
             <li>
-              Onboarding preferences such as comfort level, experience level,
-              and goals.
+              Account information, including your email address and account
+              identifier. You may also provide a display name; sign-in providers
+              may supply a name for your profile.
             </li>
-            <li>Saved positions, favorites, tried history, and ratings.</li>
-            <li>Partner-link state and sharing preferences.</li>
-            <li>Couple votes and shared wishlist selections.</li>
-            <li>Analytics consent choice.</li>
-            <li>Limited product analytics events if you opt in.</li>
             <li>
-              Assistant prompts and recommendation inputs needed to provide the
-              feature.
+              Profile and preference information, such as comfort and experience
+              levels, goals, adult-confirmation and consent choices.
+            </li>
+            <li>
+              App activity and intimate preferences, including positions you
+              save, want to try, mark as tried, or rate; partner links, sharing
+              settings, and couple votes.
+            </li>
+            <li>
+              Assistant questions, recent chat context, and relevant preference
+              information when you use the assistant.
+            </li>
+            <li>
+              Analytics consent choices and product usage events, such as screen
+              views and feature interactions, when product analytics are enabled.
+            </li>
+            <li>
+              If you enable notifications: device or browser identifiers, push
+              tokens or browser push subscriptions, platform, notification
+              choices, time zone, and limited activity and reminder timestamps.
+              When recommendation reminders are enabled, a server-side position
+              target is also used to prepare a reminder.
+            </li>
+            <li>
+              If you subscribe: account and billing-provider identifiers,
+              subscription or transaction references, product and entitlement
+              status, and subscription dates. Payment details are handled by the
+              applicable app store or billing provider; we do not receive your
+              full payment-card number through the app.
+            </li>
+            <li>
+              If you contact support through our website: the name and email
+              address you provide, request type, subject, message, account email
+              if supplied, and submission time and page URL.
             </li>
           </ul>
         </section>
@@ -92,7 +120,31 @@
             <li>Provide educational assistant responses.</li>
             <li>Maintain app security and detect errors.</li>
             <li>Improve product quality when analytics consent is enabled.</li>
+            <li>Deliver notifications and manage subscriptions when you choose those features.</li>
+            <li>Respond to support, privacy, and account-deletion requests.</li>
           </ul>
+        </section>
+
+        <section class="legal-card">
+          <h2>Service providers and sharing</h2>
+          <p>
+            We use service providers to operate features you choose. Supabase
+            provides account authentication, database, and backend services.
+            RevenueCat and the applicable app store or web billing provider
+            process subscription information. When enabled and configured,
+            product analytics may be sent to a PostHog-compatible analytics
+            service, and assistant prompts may be processed by the AI provider
+            configured for the service. Expo and the relevant platform push
+            services (Apple Push Notification service or Firebase Cloud
+            Messaging) help deliver notifications. EmailJS delivers support
+            requests submitted through our website. These providers process
+            information under their own terms and privacy policies.
+          </p>
+          <p>
+            The website also loads fonts from Google Fonts. When your browser
+            requests those fonts, Google may receive technical connection
+            information such as your IP address.
+          </p>
         </section>
 
         <section class="legal-card">
@@ -105,6 +157,10 @@
             We may share selected preferences between linked partners only when
             the relevant sharing controls are turned on. You can update or
             remove partner linking from the app.
+          </p>
+          <p>
+            We do not share intimate preferences with a partner unless you
+            enable the relevant sharing controls.
           </p>
         </section>
 
@@ -119,12 +175,16 @@
             A limited set of account access events, such as sign-in request,
             sign-in completion, sign-in failure, and sign-out events, may be
             processed before analytics consent so that we can operate, secure,
-            and improve the reliability of account access.
+            and improve the reliability of account access. These events may
+            include the sign-in provider, email domain, or error information.
           </p>
           <p>
-            Analytics is intended to help us understand basic product usage and
-            improve the app. We do not use analytics to expose intimate details
-            publicly.
+            When analytics is enabled, events may be associated with your
+            account identifier. Assistant question text is included in an
+            assistant-usage event when you submit it and may therefore be sent
+            to the configured analytics service if analytics is enabled.
+            Analytics configuration may vary by app release. You can change
+            your analytics choice in the app settings.
           </p>
         </section>
 
@@ -132,12 +192,41 @@
           <h2>AI and Assistant Features</h2>
           <p>
             The assistant is educational and non-explicit. Assistant prompts may
-            be processed server-side to generate safe guidance and
-            recommendations.
+            be processed by our backend and, when an AI provider is configured
+            and used, sent with recent chat context and relevant preference
+            information to that provider to generate guidance and
+            recommendations. Otherwise, the app may use built-in guidance
+            without an external AI provider.
           </p>
           <p>
-            We keep AI processing server-side and do not intentionally expose
-            raw provider secrets to the mobile app.
+            Please avoid including information in a prompt that you do not want
+            processed to answer your question. AI providers may handle
+            submitted information under their own privacy terms.
+          </p>
+        </section>
+
+        <section class="legal-card">
+          <h2>Notifications and subscriptions</h2>
+          <p>
+            Notifications are optional. If you enable them, we store the
+            registration and settings needed to deliver them to your devices.
+            Notifications are designed to avoid showing position names, vote
+            values, invite codes, or other intimate details on the lock screen.
+            You can turn off categories in the app or revoke notification
+            permission in your device or browser settings. Signing out
+            deactivates the current device registration.
+            Recommendation reminders are optional and may be sent after at
+            least three days without app activity, at most once every seven
+            days, and outside the default quiet hours of 9 pm to 8 am in your
+            device time zone. The reminder target is kept server-side and is
+            resolved by the app only after you open the notification.
+          </p>
+          <p>
+            If you subscribe, the applicable app store or billing provider
+            processes the purchase. We use subscription status and related
+            provider identifiers to provide and manage access. Subscription
+            cancellation and payment records are subject to the provider where
+            you purchased.
           </p>
         </section>
 
@@ -149,9 +238,12 @@
             enforce agreements.
           </p>
           <p>
-            If you request deletion, we will handle the request through the
-            support contact path provided in the app and remove or anonymize
-            data where appropriate.
+            You can start account deletion in the app where available, or use
+            the support and data-deletion form on our website. We delete or
+            anonymize account-associated information where appropriate and
+            subject to legal, security, and service-provider retention
+            requirements. Copies held by third-party providers may be subject
+            to their retention policies.
           </p>
         </section>
 
@@ -172,6 +264,8 @@
             <li>Unlink your partner.</li>
             <li>Update sharing permissions.</li>
             <li>Request account deletion.</li>
+            <li>Enable or disable notification categories and revoke device or browser notification permission.</li>
+            <li>Manage or cancel a subscription with the provider where you purchased it.</li>
           </ul>
         </section>
 
