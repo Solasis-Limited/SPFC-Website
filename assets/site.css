@@ -22,6 +22,8 @@ html {
 }
 
 body {
+  --background-transition-point: 18%;
+
   margin: 0;
   min-height: 100vh;
   font-family: "Manrope", "Segoe UI", sans-serif;
@@ -40,8 +42,8 @@ body {
     linear-gradient(
       180deg,
       var(--bg-top) 0%,
-      #3b3354 18%,
-      var(--bg-bottom) 18%,
+      #3b3354 var(--background-transition-point),
+      var(--bg-bottom) var(--background-transition-point),
       #f4eadf 100%
     );
 }
@@ -564,6 +566,10 @@ a {
 }
 
 @media (max-width: 860px) {
+  body.confirm-deletion-page {
+    --background-transition-point: 36%;
+  }
+
   .page-shell {
     width: min(100% - 20px, 1100px);
     padding-top: 18px;
