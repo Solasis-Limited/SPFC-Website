@@ -2,6 +2,7 @@
   const config = window.SPFC_SITE_CONFIG || {};
   const linkMap = {
     pwa: config.pwaUrl,
+    appStore: config.appStoreUrl,
     googlePlay: config.googlePlayUrl,
     androidFullApk: config.androidFullApkUrl
   };
@@ -12,12 +13,24 @@
 
     if (href && href.startsWith("http")) {
       link.setAttribute("href", href);
+      link.removeAttribute("aria-disabled");
+      link.removeAttribute("tabindex");
+
+      const readyText = link.getAttribute("data-link-ready-text");
+      if (readyText) {
+        const label = link.querySelector("[data-link-label]");
+        if (label) {
+          label.textContent = readyText;
+        }
+      }
+
       return;
     }
 
     link.setAttribute("href", "#");
     link.setAttribute("aria-disabled", "true");
-    link.setAttribute("title", "Set this URL in site/assets/site-config.js");
+    link.setAttribute("tabindex", "-1");
+    link.setAttribute("title", "Set this URL in assets/site-config.js");
   });
 
   const apkDownloadFilename = config.androidFullApkFilename;

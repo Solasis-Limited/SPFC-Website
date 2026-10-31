@@ -12,7 +12,8 @@ This folder contains the static GitHub Pages site for `spfc.solasislimited.org`.
 
 1. Turn on GitHub Pages for this repository and set the source to **GitHub Actions**.
 2. Point the DNS for `spfc.solasislimited.org` to GitHub Pages.
-3. Fill in the values in `site/assets/site-config.js`:
+3. Fill in the values in `assets/site-config.js`:
+   - `appStoreUrl` (once the iOS app listing is public)
    - `googlePlayUrl`
    - `androidFullApkUrl`
    - `androidFullApkFilename`

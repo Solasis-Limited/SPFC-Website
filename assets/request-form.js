@@ -6,6 +6,9 @@
   const messageField = document.getElementById("message");
   const statusField = document.getElementById("form-status");
   const noticeField = document.querySelector("[data-emailjs-status]");
+  const deletionGuidanceField = document.querySelector(
+    "[data-deletion-guidance]"
+  );
 
   if (
     !form ||
@@ -13,7 +16,8 @@
     !subjectField ||
     !messageField ||
     !statusField ||
-    !noticeField
+    !noticeField ||
+    !deletionGuidanceField
   ) {
     return;
   }
@@ -30,7 +34,7 @@
       publicKey: config.emailjs.publicKey
     });
     noticeField.textContent =
-      "Requests will be delivered by email to the support team. We aim to reply within 3-5 business days.";
+      "The support team will respond to your request as soon as possible.";
     noticeField.classList.add("notice-success");
   }
 
@@ -39,6 +43,11 @@
       subject: "SPFC support request",
       message:
         "Please describe the issue you need help with. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
+    },
+    feedback: {
+      subject: "SPFC feedback or feature request",
+      message:
+        "Share your feedback or feature idea, including how it would improve your experience. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
     },
     deletion: {
       subject: "SPFC account deletion request",
@@ -56,6 +65,7 @@
     const selected = templates[typeField.value] || templates.support;
     subjectField.value = selected.subject;
     messageField.value = selected.message;
+    deletionGuidanceField.hidden = typeField.value !== "deletion";
   };
 
   typeField.addEventListener("change", syncTemplate);
