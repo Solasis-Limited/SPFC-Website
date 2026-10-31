@@ -1,4 +1,7 @@
 window.SPFC_SITE_CONFIG = {
+  // Supabase project URL and publishable key are public client configuration.
+  supabaseUrl: "",
+  supabasePublishableKey: "",
   pwaUrl: "https://spfcapp.solasislimited.org",
   appStoreUrl: "",
   googlePlayUrl: "https://play.google.com/store/apps/details?id=org.solasislimited.spfc",

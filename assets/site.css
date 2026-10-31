@@ -238,6 +238,18 @@ a {
   border-color: rgba(45, 33, 52, 0.12);
 }
 
+.button-danger {
+  color: #fff8f2;
+  background: #a52828;
+  box-shadow: 0 12px 24px rgba(165, 40, 40, 0.2);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .button[aria-disabled="true"] {
   opacity: 0.55;
   pointer-events: none;
@@ -500,6 +512,10 @@ a {
   gap: 8px;
   font-weight: 700;
   color: var(--text);
+}
+
+.request-form [hidden] {
+  display: none;
 }
 
 .request-form input,
