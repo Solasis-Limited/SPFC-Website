@@ -118,7 +118,6 @@
                 </a>
               </div>
             </aside>
-
             <label>
               Your name
               <input
@@ -130,37 +129,28 @@
             </label>
 
             <label>
-              Your email
-              <input
-                type="email"
-                name="reply_to"
-                autocomplete="email"
-                required
-              />
-            </label>
-
-            <label>
               App account email
               <input
                 type="email"
                 name="account_email"
                 autocomplete="email"
-                placeholder="If different from the email above"
-              />
-            </label>
-
-            <label>
-              Subject
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="How can we help?"
+                placeholder="Email address used for your app account"
                 required
               />
             </label>
 
-            <label class="full-span">
+            <label>
+              Reply email (optional)
+              <input
+                type="email"
+                name="reply_to"
+                autocomplete="email"
+              />
+            </label>
+
+            <input type="hidden" name="subject" id="subject" />
+
+            <label class="full-span" data-request-details>
               Details
               <textarea
                 name="message"
@@ -170,6 +160,20 @@
                 required
               ></textarea>
             </label>
+
+            <aside
+              class="notice deletion-guidance full-span"
+              data-deletion-confirmation-guidance
+              aria-live="polite"
+              hidden
+            >
+              <strong>Confirm account deletion by email</strong>
+              <p>
+                We will email a one-time confirmation link to the account email.
+                Your account is deleted only after you open that link and confirm.
+                If the email does not arrive, contact support.
+              </p>
+            </aside>
 
             <label class="checkbox-row full-span">
               <input type="checkbox" name="confirm_request" required />

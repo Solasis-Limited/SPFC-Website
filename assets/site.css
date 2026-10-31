@@ -22,6 +22,8 @@ html {
 }
 
 body {
+  --background-transition-point: 18%;
+
   margin: 0;
   min-height: 100vh;
   font-family: "Manrope", "Segoe UI", sans-serif;
@@ -40,8 +42,8 @@ body {
     linear-gradient(
       180deg,
       var(--bg-top) 0%,
-      #3b3354 18%,
-      var(--bg-bottom) 18%,
+      #3b3354 var(--background-transition-point),
+      var(--bg-bottom) var(--background-transition-point),
       #f4eadf 100%
     );
 }
@@ -236,6 +238,18 @@ a {
   color: var(--text);
   background: rgba(255, 250, 245, 0.8);
   border-color: rgba(45, 33, 52, 0.12);
+}
+
+.button-danger {
+  color: #fff8f2;
+  background: #a52828;
+  box-shadow: 0 12px 24px rgba(165, 40, 40, 0.2);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .button[aria-disabled="true"] {
@@ -502,6 +516,10 @@ a {
   color: var(--text);
 }
 
+.request-form [hidden] {
+  display: none;
+}
+
 .request-form input,
 .request-form select,
 .request-form textarea {
@@ -548,6 +566,10 @@ a {
 }
 
 @media (max-width: 860px) {
+  body.confirm-deletion-page {
+    --background-transition-point: 36%;
+  }
+
   .page-shell {
     width: min(100% - 20px, 1100px);
     padding-top: 18px;
