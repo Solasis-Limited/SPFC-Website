@@ -180,6 +180,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   min-height: 48px;
   padding: 0 18px;
   border: 1px solid transparent;
@@ -191,6 +192,29 @@ a {
     box-shadow 160ms ease,
     background 160ms ease;
   cursor: pointer;
+}
+
+.store-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+
+.store-icon-apple {
+  fill: currentColor;
+}
+
+.store-icon-android {
+  fill: #3ddc84;
+}
+
+.store-icon-web {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .button:hover,
@@ -299,6 +323,35 @@ a {
   margin-top: 20px;
 }
 
+.channel-panel {
+  margin-top: 20px;
+}
+
+.channel-intro {
+  margin-bottom: 20px;
+}
+
+.channel-intro h2 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.channel-grid {
+  align-items: stretch;
+}
+
+.channel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.channel-card .button {
+  margin-top: auto;
+}
+
 .install-intro h2,
 .store-card h2,
 .download-card-copy h2,
@@ -310,7 +363,8 @@ a {
 }
 
 .install-intro h2,
-.store-card h2 {
+.store-card h2,
+.download-card-copy h2 {
   font-size: clamp(2rem, 4vw, 3.1rem);
 }
 
@@ -429,6 +483,10 @@ a {
 .notice.notice-success {
   background: rgba(46, 139, 127, 0.12);
   border-color: rgba(46, 139, 127, 0.24);
+}
+
+.deletion-guidance {
+  margin: 0;
 }
 
 .request-form {
