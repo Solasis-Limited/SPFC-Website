@@ -4,10 +4,14 @@
   const typeField = document.getElementById("request-type");
   const subjectField = document.getElementById("subject");
   const messageField = document.getElementById("message");
+  const detailsField = document.querySelector("[data-request-details]");
   const statusField = document.getElementById("form-status");
   const noticeField = document.querySelector("[data-emailjs-status]");
   const deletionGuidanceField = document.querySelector(
     "[data-deletion-guidance]"
+  );
+  const deletionConfirmationGuidanceField = document.querySelector(
+    "[data-deletion-confirmation-guidance]"
   );
 
   if (
@@ -15,9 +19,11 @@
     !typeField ||
     !subjectField ||
     !messageField ||
+    !detailsField ||
     !statusField ||
     !noticeField ||
-    !deletionGuidanceField
+    !deletionGuidanceField ||
+    !deletionConfirmationGuidanceField
   ) {
     return;
   }
@@ -28,15 +34,19 @@
     config.emailjs.publicKey &&
     config.emailjs.serviceId &&
     config.emailjs.templateId;
+  const deletionConfigured = config.supabaseUrl && config.supabasePublishableKey;
 
   if (configured) {
     window.emailjs.init({
       publicKey: config.emailjs.publicKey
     });
-    noticeField.textContent =
-      "The support team will respond to your request as soon as possible.";
-    noticeField.classList.add("notice-success");
   }
+  noticeField.textContent = configured
+    ? "The support team will respond to your request as soon as possible."
+    : deletionConfigured
+      ? "Account deletion requests are available. Support requests are temporarily unavailable."
+      : "Configure EmailJS and Supabase in assets/site-config.js before going live.";
+  if (configured || deletionConfigured) noticeField.classList.add("notice-success");
 
   const templates = {
     support: {
@@ -52,7 +62,7 @@
     deletion: {
       subject: "SPFC account deletion request",
       message:
-        "Please confirm the account you want deleted and include details that will help us identify it. Do not include sensitive information such as passwords, payment card details, or government ID numbers."
+        "We will send a one-time confirmation link to the app account email. Your account is deleted only after you open that link and confirm."
     },
     privacy: {
       subject: "SPFC privacy question",
@@ -63,9 +73,19 @@
 
   const syncTemplate = () => {
     const selected = templates[typeField.value] || templates.support;
+    const isDeletionRequest = typeField.value === "deletion";
     subjectField.value = selected.subject;
     messageField.value = selected.message;
-    deletionGuidanceField.hidden = typeField.value !== "deletion";
+    messageField.required = !isDeletionRequest;
+    detailsField.hidden = isDeletionRequest;
+    deletionGuidanceField.hidden = !isDeletionRequest;
+    deletionConfirmationGuidanceField.hidden = !isDeletionRequest;
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.textContent = isDeletionRequest
+        ? "Email confirmation link"
+        : "Send request";
+    }
   };
 
   typeField.addEventListener("change", syncTemplate);
@@ -73,12 +93,6 @@
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    if (!configured) {
-      statusField.textContent =
-        "EmailJS is not configured yet. Add your service, template, and public key first.";
-      return;
-    }
 
     const submitButton = form.querySelector('button[type="submit"]');
     if (submitButton instanceof HTMLButtonElement) {
@@ -89,6 +103,44 @@
 
     try {
       const formData = new FormData(form);
+      if (typeField.value === "deletion") {
+        if (!deletionConfigured) {
+          statusField.textContent =
+            "Account deletion requests are temporarily unavailable. Please contact support.";
+          return;
+        }
+
+        const accountEmail = String(formData.get("account_email") || "").trim();
+        const response = await fetch(
+          `${config.supabaseUrl.replace(/\/+$/, "")}/functions/v1/request-account-deletion`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${config.supabasePublishableKey}`,
+              apikey: config.supabasePublishableKey,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: accountEmail })
+          }
+        );
+        const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.error || "Could not send a deletion confirmation email.");
+        }
+
+        form.reset();
+        syncTemplate();
+        statusField.textContent = result.message ||
+          "If an account exists for that email, a confirmation link will be sent. If it does not arrive, contact support.";
+        return;
+      }
+
+      if (!configured) {
+        statusField.textContent =
+          "EmailJS is not configured yet. Add your service, template, and public key first.";
+        return;
+      }
+
       const templateParams = Object.fromEntries(formData.entries());
       const requestType = templates[typeField.value] || templates.support;
 
